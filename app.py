@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import joblib
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app)
 
 modelo = joblib.load("modelo_autos.pkl")
 columnas = joblib.load("columnas.pkl")
