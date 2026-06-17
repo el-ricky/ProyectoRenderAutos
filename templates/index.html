@@ -32,14 +32,16 @@
 
         button {
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 20px;
             cursor: pointer;
+            font-size: 16px;
         }
 
         #resultado {
             margin-top: 25px;
             font-size: 24px;
             font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
@@ -50,14 +52,26 @@
     <label for="enginesize">Tamaño del motor</label>
     <input type="number" id="enginesize" value="130">
 
-    <label for="curbweight">Peso del vehículo</label>
-    <input type="number" id="curbweight" value="2548">
-
     <label for="horsepower">Caballos de fuerza</label>
     <input type="number" id="horsepower" value="111">
 
+    <label for="curbweight">Peso del vehículo (kg)</label>
+    <input type="number" id="curbweight" value="2548">
+
     <label for="carwidth">Ancho del vehículo</label>
     <input type="number" step="0.1" id="carwidth" value="65.5">
+
+    <label for="carlength">Longitud del vehículo</label>
+    <input type="number" step="0.1" id="carlength" value="176.6">
+
+    <label for="wheelbase">Distancia entre ejes</label>
+    <input type="number" step="0.1" id="wheelbase" value="99.8">
+
+    <label for="citympg">Rendimiento en ciudad (MPG)</label>
+    <input type="number" id="citympg" value="21">
+
+    <label for="highwaympg">Rendimiento en carretera (MPG)</label>
+    <input type="number" id="highwaympg" value="27">
 
     <button onclick="predecir()">Estimar precio</button>
 
@@ -68,17 +82,17 @@
 
             const datos = {
                 enginesize: Number(document.getElementById("enginesize").value),
-                curbweight: Number(document.getElementById("curbweight").value),
                 horsepower: Number(document.getElementById("horsepower").value),
+                curbweight: Number(document.getElementById("curbweight").value),
                 carwidth: Number(document.getElementById("carwidth").value),
+                carlength: Number(document.getElementById("carlength").value),
+                wheelbase: Number(document.getElementById("wheelbase").value),
+                citympg: Number(document.getElementById("citympg").value),
+                highwaympg: Number(document.getElementById("highwaympg").value),
 
                 cylindernumber_four: 1,
-                highwaympg: 27,
-                citympg: 21,
-                carlength: 176.6,
                 drivewheel_rwd: 0,
                 drivewheel_fwd: 1,
-                wheelbase: 99.8,
                 boreratio: 3.47,
                 fuelsystem_mpfi: 1,
                 fuelsystem_2bbl: 0,
